@@ -1,5 +1,8 @@
 package solutions;
-
+/*
+思路相当值得学习，把困难的难以思考的问题转化成更符合我们自身思路的问题。
+另外，取每一位的数字的方法也值得学习，下次遇到这种问题就不要无脑toString了。
+ */
 public class Twelve_IntegerToRoman {
     class Solution {
         //An awesome solution
