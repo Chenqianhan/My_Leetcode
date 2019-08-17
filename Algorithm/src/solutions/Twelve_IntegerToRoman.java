@@ -14,7 +14,9 @@ public class Twelve_IntegerToRoman {
             String X[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
             String I[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
             //A way to get each digit of a number. Mark!
-            return (M[num/1000]+C[(num%1000)/100]+X[(num%100)/10]+I[(num%10)]);
+            //return (M[num/1000]+C[(num%1000)/100]+X[(num%100)/10]+I[(num%10)]);
+            //不用括号也可以；
+            return M[num/1000]+C[(num%1000)/100]+X[(num%100)/10]+I[(num%10)];
         }
     }
 }
