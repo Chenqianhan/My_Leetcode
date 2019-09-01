@@ -4,7 +4,6 @@ package solutions;
 另外，取每一位的数字的方法也值得学习，下次遇到这种问题就不要无脑toString了。
  */
 public class Twelve_IntegerToRoman {
-    class Solution {
         //An awesome solution
         //Convert roman numerals, that is hard to understand, into a arabic numerals way.
         //Converting a hard problem into one or more easy problems is essential.
@@ -18,5 +17,4 @@ public class Twelve_IntegerToRoman {
             //不用括号也可以；
             return M[num/1000]+C[(num%1000)/100]+X[(num%100)/10]+I[(num%10)];
         }
-    }
 }
