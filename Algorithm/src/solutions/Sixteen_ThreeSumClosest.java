@@ -23,3 +23,5 @@ public class Sixteen_ThreeSumClosest {
         return res;
     }
 }
+//First accepted code turns out that runtime faster than 43.32% while usage is 100%
+//Still need way to complement runtime by storage
