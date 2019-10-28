@@ -1,7 +1,4 @@
-import solutions.Assignment_kthSmallestTwoSortedArrays;
-import solutions.Eight_StringToInteger;
-import solutions.Thirteen_RomanToInteger;
-import solutions.Twenty_validParentheses;
+import solutions.*;
 
 
 import java.io.BufferedReader;
@@ -36,13 +33,8 @@ public class Main {
         //System.out.println(str);
         //String[] arr=str.split(",");
         //for(String a:arr) System.out.println(a);
-
-        Twenty_validParentheses t=new Twenty_validParentheses();
-        if(t.isValid("[]")){
-            System.out.println("True");
-        }else System.out.println("False");
-
-        String[] str="{()}".split("");
-        for(String s:str) System.out.println(s);
+        int[] arr={0,0,1,1,1,2,2,2,2,3,3,3};
+        TwentySix_RemoveDuplicateFromSArray tr=new TwentySix_RemoveDuplicateFromSArray();
+        tr.removeDuplicates(arr);
     }
 }
