@@ -33,8 +33,10 @@ public class Main {
         //System.out.println(str);
         //String[] arr=str.split(",");
         //for(String a:arr) System.out.println(a);
-        int[] arr={0,0,1,1,1,2,2,2,2,3,3,3};
-        TwentySix_RemoveDuplicateFromSArray tr=new TwentySix_RemoveDuplicateFromSArray();
-        tr.removeDuplicates(arr);
+        //int[] arr={0,0,1,1,1,2,2,2,2,3,3,3};
+        //TwentySix_RemoveDuplicateFromSArray tr=new TwentySix_RemoveDuplicateFromSArray();
+        //tr.removeDuplicates(arr);
+        String s="This";
+        System.out.println(s.substring(1,4));
     }
 }
