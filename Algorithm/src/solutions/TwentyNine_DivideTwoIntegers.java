@@ -1,5 +1,11 @@
 package solutions;
 //Cannot not use multiplication, division and mod operation.
+/*
+Related knowledge:
+Complement code -> 8 bit range is [-128, 127].
+<< is bitwise operation to left. >> is to right
+ */
+
 
 public class TwentyNine_DivideTwoIntegers {
     public int divide(int dividend, int divisor) {
