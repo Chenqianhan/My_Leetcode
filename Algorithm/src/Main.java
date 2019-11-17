@@ -44,5 +44,8 @@ public class Main {
         nums[1]=2;
         nums[2]=3;
         fp.permute(nums);
+        int a=Integer.MIN_VALUE;
+        //if(a==Integer.MIN_VALUE) int b=Integer.MAX_VALUE;
+        System.out.println(-a);
     }
 }
