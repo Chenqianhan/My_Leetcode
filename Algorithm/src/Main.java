@@ -36,7 +36,13 @@ public class Main {
         //int[] arr={0,0,1,1,1,2,2,2,2,3,3,3};
         //TwentySix_RemoveDuplicateFromSArray tr=new TwentySix_RemoveDuplicateFromSArray();
         //tr.removeDuplicates(arr);
-        String s="This";
-        System.out.println(s.substring(1,4));
+        //String s="This";
+        //System.out.println(s.substring(1,4));
+        FortySix_permutations fp=new FortySix_permutations();
+        int[] nums=new int[3];
+        nums[0]=1;
+        nums[1]=2;
+        nums[2]=3;
+        fp.permute(nums);
     }
 }
