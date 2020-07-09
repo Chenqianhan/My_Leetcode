@@ -1,4 +1,4 @@
-package solutions;
+package Recursion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +16,8 @@ public class FortySix_permutations {
             //list.add(new ArrayList<>(temp));
             return;
         }
+
+
         for(int i=0;i<nums.length;i++){
             if((isUsed & 1<<i)==0){
                 temp.add(nums[i]);
@@ -23,6 +25,7 @@ public class FortySix_permutations {
                 //List<Integer> tempTemp=new ArrayList<>(temp);
                 //tempIsUsed |= 1<<i;
                 dfs(list, nums, temp, isUsed | 1<<i);
+                //To clean up last recursion increment.
                 temp.remove(temp.size()-1);
             }
         }

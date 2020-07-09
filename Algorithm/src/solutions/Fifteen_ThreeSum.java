@@ -11,7 +11,7 @@ public class Fifteen_ThreeSum {
         for(int i=0;i<nums.length-2;i++){
             //Avoid duplicate first number.
             if(i==0||(i>0 && nums[i]!=nums[i-1])){
-                int f=i+1, r=nums.length-1, sum=0-nums[i];
+                int f=i+1, r=nums.length-1, sum=-nums[i];
                 while(f<r){
                     if(nums[f]+nums[r]==sum){
                         set.add(Arrays.asList(nums[i],nums[f],nums[r]));
