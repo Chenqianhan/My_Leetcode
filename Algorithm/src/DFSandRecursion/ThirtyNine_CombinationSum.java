@@ -1,7 +1,6 @@
-package Recursion;
+package DFSandRecursion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 //To do: There is also a backtrack way to solve this. And compare it with LC46.

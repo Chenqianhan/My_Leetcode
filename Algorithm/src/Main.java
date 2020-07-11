@@ -1,5 +1,5 @@
-import Recursion.FortySix_permutations;
-import Recursion.ThirtyNine_CombinationSum;
+import DFSandRecursion.FortySix_permutations;
+import DFSandRecursion.ThirtyNine_CombinationSum;
 
 
 import java.io.IOException;
