@@ -1,4 +1,4 @@
-package solutions;
+package Array;
 /*
 该题主要难点在于思路，Brute Force穷举的做法的时间复杂度是O(n^2)
 而这方法是用两个指针，时间复杂度为O(n)，已知The volume of water is positively correlated with distance of two pointers and height of the lower pointer.

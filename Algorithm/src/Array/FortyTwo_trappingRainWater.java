@@ -1,4 +1,4 @@
-package solutions;
+package Array;
 //It's a double 100% solution.
 
 public class FortyTwo_trappingRainWater {
