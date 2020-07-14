@@ -1,4 +1,4 @@
-package solutions;
+package TwoPointerAndLinkedList;
 
 public class Three_LongestSubstringWithoutRepeat {
     public int lengthOfLongestSubstring(String s) {

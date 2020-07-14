@@ -1,4 +1,6 @@
-package solutions;
+package TwoPointerAndLinkedList;
+
+import solutions.ListNode;
 
 import java.util.PriorityQueue;
 

@@ -1,4 +1,6 @@
-package solutions;
+package TwoPointerAndLinkedList;
+
+import solutions.ListNode;
 
 public class TwentyOne_MergeTwoLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
