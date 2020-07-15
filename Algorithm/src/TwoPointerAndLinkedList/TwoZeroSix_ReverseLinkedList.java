@@ -1,7 +1,7 @@
 package TwoPointerAndLinkedList;
 
 import solutions.ListNode;
-
+//These three solution performs similar. 100% in runtime but 5-7% in memory
 public class TwoZeroSix_ReverseLinkedList {
     /*
     //Iteration
@@ -33,6 +33,7 @@ public class TwoZeroSix_ReverseLinkedList {
         return recursion(next, newHead);
     }
     */
+
     //Two-pointer
     public ListNode reverseList(ListNode head){
         if(head==null) return head;
