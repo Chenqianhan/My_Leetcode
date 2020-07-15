@@ -18,9 +18,9 @@ public class TwoZeroSix_ReverseLinkedList {
     }
     */
 
+    /*
     //Recursion with same idea.
     public ListNode reverseList(ListNode head) {
-        //ListNode newHead = null;
         return recursion(head, null);
     }
 
@@ -31,6 +31,30 @@ public class TwoZeroSix_ReverseLinkedList {
         head.next = newHead;
         newHead = head;
         return recursion(next, newHead);
+    }
+    */
+    //Two-pointer
+    public ListNode reverseList(ListNode head){
+        if(head==null) return head;
+        int size = 0;
+        ListNode index = head;
+        while(index!=null){
+            size++;
+            index = index.next;
+        }
+        ListNode[] list = new ListNode[size];
+        index = head;
+        for(int i=0;i<size;i++){
+            list[i]=index;
+            index=index.next;
+        }
+
+        list[0].next=null;
+        for(int left=1, right=size-1;left<=right;left++,right--){
+            list[right].next = list[right-1];
+            list[left].next = list[left-1];
+        }
+        return list[size-1];
     }
 
 }
