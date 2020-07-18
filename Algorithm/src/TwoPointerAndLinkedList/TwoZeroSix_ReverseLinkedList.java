@@ -1,6 +1,6 @@
 package TwoPointerAndLinkedList;
 
-import solutions.ListNode;
+import dataStructure.ListNode;
 //These three solution performs similar. 100% in runtime but 5-7% in memory
 public class TwoZeroSix_ReverseLinkedList {
     /*

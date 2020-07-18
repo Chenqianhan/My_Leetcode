@@ -1,8 +1,6 @@
 package TwoPointerAndLinkedList;
 
-import solutions.ListNode;
-
-import java.util.PriorityQueue;
+import dataStructure.ListNode;
 
 public class TwentyThree_MergeKSLists {
     /*

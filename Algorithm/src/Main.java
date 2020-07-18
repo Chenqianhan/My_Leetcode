@@ -3,10 +3,13 @@ import DFSandRecursion.ThirtyNine_CombinationSum;
 
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
         int[] a = {2,3,6,7};
@@ -18,6 +21,22 @@ public class Main {
             }
         }
 
+        int i = -1;
+        String s = String.valueOf(i);
+        int j = -(s.charAt(1) - '0');
+        s = "-1,,1";
+        String[] ints=s.split(",");
+        for(String x:ints){
+            System.out.println(x);
+        }
+        System.out.println(!ints[1].equals(""));
+
+         */
+
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(1);
+        q.offer(2);
+        System.out.println(q.peek());
 
         //Eight_StringToInteger sti=new Eight_StringToInteger();
         /*

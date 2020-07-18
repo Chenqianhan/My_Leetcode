@@ -1,6 +1,8 @@
 
 package solutions;
 
+import dataStructure.ListNode;
+
 public class Nineteen_RemoveNthNode {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy=new ListNode(0); //dummy is to mark the zero;
