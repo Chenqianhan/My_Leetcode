@@ -1,14 +1,26 @@
 import DFSandRecursion.FortySix_permutations;
 import DFSandRecursion.ThirtyNine_CombinationSum;
+import TreeAndBST.FourTwentyEight_SerializeAndDeserializeNTree;
+import dataStructure.Node;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        FourTwentyEight_SerializeAndDeserializeNTree sd = new FourTwentyEight_SerializeAndDeserializeNTree();
+        Node root = new Node(1);
+        root.children = new ArrayList<>();
+        root.children.add(new Node(2));
+        root.children.add(new Node(3));
+        //System.out.println(sd.serialize(root));
+        //String s = sd.serialize(sd.deserialize("1 [ 3 [ 5 6 ] 2 4 ]"));
+        String s = sd.serialize(sd.deserialize("1 [ 3 [ 4 [ 3 ] 5 ] 4 ]"));
+        System.out.println(s);
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
@@ -31,12 +43,14 @@ public class Main {
         }
         System.out.println(!ints[1].equals(""));
 
-         */
+
 
         Queue<Integer> q = new LinkedList<>();
         q.offer(1);
         q.offer(2);
         System.out.println(q.peek());
+
+         */
 
         //Eight_StringToInteger sti=new Eight_StringToInteger();
         /*
