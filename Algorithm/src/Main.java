@@ -5,10 +5,7 @@ import dataStructure.Node;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -21,6 +18,14 @@ public class Main {
         //String s = sd.serialize(sd.deserialize("1 [ 3 [ 5 6 ] 2 4 ]"));
         String s = sd.serialize(sd.deserialize("1 [ 3 [ 4 [ 3 ] 5 ] 4 ]"));
         System.out.println(s);
+
+        TreeMap<Integer,Integer> map = new TreeMap<>();
+        map.put(1,1);
+        map.put(3,2);
+        map.put(2,4);
+        for(int i:map.values()){
+            System.out.println(i);
+        }
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
