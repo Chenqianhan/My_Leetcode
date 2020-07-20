@@ -1,6 +1,7 @@
 package topologyAndQueue;
 
 //Deque means it is a double end queue on which we can operate from both side.
+//In insertion, minus head before assigning value, plus tail after assigning value.
 public class SixFortyOne_DesignCircularDeque {
     private int[] queue;
     private int capacity;
@@ -11,8 +12,9 @@ public class SixFortyOne_DesignCircularDeque {
         //The reason to plus 1 is to make a difference between empty and full;
         queue = new int[k+1];
         capacity = k+1;
-        head = 0;
-        tail = 0;
+        //We don't have to initialize integer variables Cuz their values are default 0;
+        //head = 0;
+        //tail = 0;
     }
 
     /** Adds an item at the front of Deque. Return true if the operation is successful. */
