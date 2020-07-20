@@ -1,4 +1,4 @@
-package topology;
+package topologyAndQueue;
 
 //I have tried the way using TreeSet, but it seems no improvement.
 public class ThreeSixtyThree_MaxSumOfRectangle {
