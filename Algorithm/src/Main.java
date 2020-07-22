@@ -9,6 +9,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        /*
         FourTwentyEight_SerializeAndDeserializeNTree sd = new FourTwentyEight_SerializeAndDeserializeNTree();
         Node root = new Node(1);
         root.children = new ArrayList<>();
@@ -26,6 +27,15 @@ public class Main {
         for(int i:map.values()){
             System.out.println(i);
         }
+
+         */
+
+        int i = 0;
+        i |= 1<<1;
+        System.out.println(i);
+        i |= 1<<3;
+        System.out.println(i);
+        System.out.println();
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
