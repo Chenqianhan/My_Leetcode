@@ -29,6 +29,11 @@ public class Main {
         }
 
          */
+        String a = "ABC";
+        String b = "ABD";
+        String[] an = a.split("");
+
+        System.out.println(an[0]);
 
         int i = 0;
         i |= 1<<1;
@@ -36,6 +41,7 @@ public class Main {
         i |= 1<<3;
         System.out.println(i);
         System.out.println();
+
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
