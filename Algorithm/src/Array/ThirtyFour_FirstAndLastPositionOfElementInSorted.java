@@ -1,4 +1,4 @@
-package solutions;
+package Array;
 
 public class ThirtyFour_FirstAndLastPositionOfElementInSorted {
     public int[] searchRange(int[] nums, int target) {
