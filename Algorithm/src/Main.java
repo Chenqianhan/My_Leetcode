@@ -41,7 +41,9 @@ public class Main {
         i |= 1<<3;
         System.out.println(i);
         System.out.println();
-
+        Stack<Integer> stack = new Stack<>();
+        stack.push(null);
+        System.out.println(stack.pop());
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
