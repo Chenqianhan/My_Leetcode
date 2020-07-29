@@ -1,4 +1,4 @@
-package DFS_BFS;
+package DFSandBFS;
 
 public class TwoHundred_NumbersOfIsland {
     //Optimized, 2ms(66%), 42MB(28%)
