@@ -1,4 +1,4 @@
-package TreeAndBST;
+package DFS_BFS;
 
 import dataStructure.Node;
 

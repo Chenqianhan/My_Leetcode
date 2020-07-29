@@ -1,9 +1,3 @@
-import DFSandRecursion.FortySix_permutations;
-import DFSandRecursion.ThirtyNine_CombinationSum;
-import TreeAndBST.FourTwentyEight_SerializeAndDeserializeNTree;
-import dataStructure.Node;
-
-
 import java.io.IOException;
 import java.util.*;
 
@@ -44,6 +38,12 @@ public class Main {
         Stack<Integer> stack = new Stack<>();
         stack.push(null);
         System.out.println(stack.pop());
+
+        List<Integer> l = new ArrayList<>();
+        l.add(1);
+        List<Integer> o = new ArrayList<>(l);
+        l.add(2);
+        System.out.println(o.size());
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();

@@ -1,4 +1,4 @@
-package TreeAndBST;
+package TreeAndBinarySearchTree;
 
 import dataStructure.TreeNode;
 
