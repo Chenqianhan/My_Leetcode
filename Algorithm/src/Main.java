@@ -23,27 +23,9 @@ public class Main {
         }
 
          */
-        String a = "ABC";
-        String b = "ABD";
-        String[] an = a.split("");
-
-        System.out.println(an[0]);
-
-        int i = 0;
-        i |= 1<<1;
-        System.out.println(i);
-        i |= 1<<3;
-        System.out.println(i);
-        System.out.println();
-        Stack<Integer> stack = new Stack<>();
-        stack.push(null);
-        System.out.println(stack.pop());
-
-        List<Integer> l = new ArrayList<>();
-        l.add(1);
-        List<Integer> o = new ArrayList<>(l);
-        l.add(2);
-        System.out.println(o.size());
+        char a = 'a';
+        char b = 'b';
+        System.out.println(a<b);
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
