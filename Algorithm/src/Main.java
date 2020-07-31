@@ -25,7 +25,11 @@ public class Main {
          */
         char a = 'a';
         char b = 'b';
-        System.out.println(a<b);
+        //System.out.println(a<b);
+        for(int i=0;i<10;++i) {
+            System.out.println(i);
+        }
+
         /*
         FortySix_permutations f = new FortySix_permutations();
         ThirtyNine_CombinationSum t = new ThirtyNine_CombinationSum();
