@@ -12,5 +12,9 @@ public class Main {
         }
         String c = "05";
         System.out.println(Integer.parseInt(c));
+
+        String s = "dig1 8 1 5 1";
+        String[] strs = s.split("\\s",2);
+        for(String str:strs) System.out.println(str);
     }
 }
