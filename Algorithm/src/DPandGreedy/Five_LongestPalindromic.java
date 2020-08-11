@@ -1,4 +1,4 @@
-package solutions;
+package DPandGreedy;
 
 public class Five_LongestPalindromic {
     public String longestPalindrome(String s) {

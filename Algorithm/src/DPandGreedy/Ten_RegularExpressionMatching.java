@@ -1,4 +1,4 @@
-package solutions;
+package DPandGreedy;
 
 public class Ten_RegularExpressionMatching {
     //It's hard to figure out it.

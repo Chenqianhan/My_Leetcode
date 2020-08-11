@@ -1,4 +1,4 @@
-package solutions;
+package DPandGreedy;
 
 import java.util.Arrays;
 
