@@ -1,4 +1,4 @@
-package HashMap;
+package TwoPointerAndLinkedList;
 
 import dataStructure.Node;
 
