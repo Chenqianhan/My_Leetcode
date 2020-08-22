@@ -28,7 +28,6 @@ public class TwoZeroSeven_CourseScheduler {
                 queue.add(i);
                 count++;
             }
-
         }
 
         while(!queue.isEmpty()){
