@@ -6,6 +6,7 @@ import static java.util.Collections.reverseOrder;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         if(n==0) return;
@@ -52,6 +53,8 @@ public class Main {
             }
             System.out.println();
         }
+
+         */
         /*
         Scanner sc = new Scanner(System.in);
         int groups = sc.nextInt();
@@ -73,5 +76,54 @@ public class Main {
         }
 */
         //System.out.println(0^1);
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(), K = sc.nextInt();
+        HashMap<String, Integer> map = new HashMap<>();
+        for(int i = 0; i < N; i++){
+            String cur = sc.next();
+            map.put(cur, map.getOrDefault(cur, 0)+1);
+        }
+        ArrayList<String[]> array = new ArrayList<>();
+        for(String key:map.keySet()){
+            //Pair<String, Integer> pair = new Pair<>();
+            String[] tmp = new String[2];
+            tmp[0] = key; tmp[1] = String.valueOf(map.get(key));
+            array.add(tmp);
+        }
+
+        Collections.sort(array, new Comparator(){
+            public int compare(Object o1, Object o2){
+                String[] s1 = (String[])o1;
+                String[] s2 = (String[])o2;
+                if(s1[1].equals(s2[1])){
+                    return s1[0].compareTo(s2[0]);
+                }else{
+                    return s2[1].compareTo(s1[1]);
+                }
+            }
+        });
+
+        for(int i=0;i<K;i++){
+            String[] cur = array.get(i);
+            System.out.println(cur[0]+" "+cur[1]);
+        }
+
+        Collections.sort(array, new Comparator(){
+            public int compare(Object o1, Object o2){
+                String[] s1 = (String[])o1;
+                String[] s2 = (String[])o2;
+                if(s1[1].equals(s2[1])){
+                    return s1[0].compareTo(s2[0]);
+                }else{
+                    return s1[1].compareTo(s2[1]);
+                }
+            }
+        });
+
+        for(int i=0;i<K;i++){
+            String[] cur = array.get(i);
+            System.out.println(cur[0]+" "+cur[1]);
+        }
     }
+
 }
