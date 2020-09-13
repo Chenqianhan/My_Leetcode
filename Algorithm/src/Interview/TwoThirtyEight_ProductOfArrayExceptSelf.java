@@ -1,4 +1,4 @@
-package DPandGreedy;
+package Interview;
 
 public class TwoThirtyEight_ProductOfArrayExceptSelf {
     //Optimized DP.

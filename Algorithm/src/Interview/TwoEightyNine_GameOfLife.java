@@ -1,4 +1,4 @@
-package Array;
+package Interview;
 
 public class TwoEightyNine_GameOfLife {
     public void gameOfLife(int[][] board) {

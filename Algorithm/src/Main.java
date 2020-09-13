@@ -2,10 +2,13 @@
 import java.io.IOException;
 import java.util.*;
 
+import static com.sun.xml.internal.xsom.impl.UName.comparator;
 import static java.util.Collections.reverseOrder;
 
 public class Main {
     public static void main(String[] args) {
+        int C = 5;
+        System.out.println(~C);
         /*
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -75,55 +78,124 @@ public class Main {
             System.out.println(max-cnt);
         }
 */
-        //System.out.println(0^1);
+        /*
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt(), K = sc.nextInt();
-        HashMap<String, Integer> map = new HashMap<>();
-        for(int i = 0; i < N; i++){
-            String cur = sc.next();
-            map.put(cur, map.getOrDefault(cur, 0)+1);
-        }
-        ArrayList<String[]> array = new ArrayList<>();
-        for(String key:map.keySet()){
-            //Pair<String, Integer> pair = new Pair<>();
-            String[] tmp = new String[2];
-            tmp[0] = key; tmp[1] = String.valueOf(map.get(key));
-            array.add(tmp);
-        }
-
-        Collections.sort(array, new Comparator(){
-            public int compare(Object o1, Object o2){
-                String[] s1 = (String[])o1;
-                String[] s2 = (String[])o2;
-                if(s1[1].equals(s2[1])){
-                    return s1[0].compareTo(s2[0]);
-                }else{
-                    return s2[1].compareTo(s1[1]);
+        int n = sc.nextInt();
+        int A = sc.nextInt(), B = sc.nextInt();
+        char[] a = Integer.toString(A).toCharArray();
+        char[] b = Integer.toString(B).toCharArray();
+        Arrays.sort(b, Comparator.reverseOrder());
+        for(int i = 0;i<n;i++){
+            for(int j = 1;j<n-i;j++){
+                if(b[j-1]>b[j]){
+                    char tmp = b[j-1];
+                    b[j-1] = b[j];
+                    b[j] = tmp;
+                    //true -> a>=b
+                    if(compare(a, b)){
+                        b[j] = b[j-1];
+                        b[j-1] = tmp;
+                        System.out.println(Integer.parseInt(new String(b)));
+                        return;
+                    }
                 }
             }
-        });
-
-        for(int i=0;i<K;i++){
-            String[] cur = array.get(i);
-            System.out.println(cur[0]+" "+cur[1]);
         }
+        System.out.println(-1);
 
-        Collections.sort(array, new Comparator(){
-            public int compare(Object o1, Object o2){
-                String[] s1 = (String[])o1;
-                String[] s2 = (String[])o2;
-                if(s1[1].equals(s2[1])){
-                    return s1[0].compareTo(s2[0]);
-                }else{
-                    return s1[1].compareTo(s2[1]);
+         */
+
+        char[] list = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t',
+                'u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
+                'O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        String raw_str = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBeeeeeeeeeeFYHHnjHAPQQc";
+        StringBuilder sb = new StringBuilder();
+        int Length = raw_str.length()-1;
+        for(int i=0;i<Length+1;i++){
+            int idx = i;
+            int len = 1;
+            char c = raw_str.charAt(i);
+            while(idx<Length && raw_str.charAt(idx)==raw_str.charAt(idx+1)){
+                len++;
+                idx++;
+            }
+            if(len>3){
+                if(len>55){
+                    idx -= len - 55;
+                    len = 55;
+                }
+                //char charLen = list[len-4];
+                sb.append("0").append(list[len - 4]).append(c);
+            }else{
+                while(len-->0){
+                    sb.append(c);
                 }
             }
-        });
-
-        for(int i=0;i<K;i++){
-            String[] cur = array.get(i);
-            System.out.println(cur[0]+" "+cur[1]);
+            i = idx;
         }
+        System.out.println(sb.toString());
+        //System.out.println("0ZB0tB0geFYHHnjHAPQQc");
+
+
+
+        /*
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        //好大一坑, A,B可能大于Integer范围.
+        String A = sc.next(), B = sc.next();
+        char[] a = A.toCharArray();
+        char[] b = B.toCharArray();
+
+        int idx = 0;
+        //Find equal
+        while(idx<b.length-1){
+            for(int i=idx;i<b.length;i++){
+                if(b[i]==a[idx]){
+                    char tmp = b[i];
+                    b[i] = b[idx];
+                    b[idx] = tmp;
+                    break;
+                }
+            }
+            //No more equal number;
+            if(b[idx]!=a[idx]) break;
+            idx++;
+        }
+
+        char min = 'Z';
+        int k = -1;
+        //Find least larger number;
+        for(int i=idx;i<b.length;i++){
+            if(b[i]>a[idx] && b[i]<min){
+                min = b[i];
+                k = i;
+            }
+        }
+        //Swap
+        if(k!=-1) {
+            char t = b[k];
+            b[k] = b[idx];
+            b[idx] = t;
+            idx++;
+        }
+
+        //After that, the rest of it will be in order.
+        //Bubble sort
+        for(int i=idx;i<b.length;i++){
+            for(int j=idx+1;j<b.length-i+idx;j++){
+                if(b[j-1]>b[j]){
+                    char tmp = b[j-1];
+                    b[j-1] = b[j];
+                    b[j] = tmp;
+                }
+            }
+        }
+
+        //int res = Integer.parseInt(new String(b));
+        String res = new String(b);
+        System.out.println(A.compareTo(res)<0?res:-1);
+
+         */
+
     }
-
 }

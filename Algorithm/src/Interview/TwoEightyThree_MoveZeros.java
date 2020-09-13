@@ -1,4 +1,4 @@
-package Array;
+package Interview;
 
 public class TwoEightyThree_MoveZeros {
     /*
