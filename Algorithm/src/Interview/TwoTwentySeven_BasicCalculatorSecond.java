@@ -1,4 +1,4 @@
-package String;
+package Interview;
 
 public class TwoTwentySeven_BasicCalculatorSecond {
     //It is an optimal generic method.
