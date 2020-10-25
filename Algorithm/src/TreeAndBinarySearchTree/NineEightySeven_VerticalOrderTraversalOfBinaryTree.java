@@ -9,7 +9,7 @@ import java.util.*;
  * It can be further improved by claiming x, y, cal all in new data structure rather than using TreeMap.
  * This is a example:
  * @Override
- *        public int compareTo(Location that) {
+ * public int compareTo(Location that) {
  * 		if (this.x != that.x) // left to right, x increases
  * 			return Integer.compare(this.x, that.x);
  * 		if (this.y != that.y) // top to bottom, y increases

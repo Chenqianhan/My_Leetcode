@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class TwoSeventeen_ContainsDuplicate {
     //O(nlogn),O(1). If there is an additional requirement that ban sort, the second solution can be an alternative,
     //but will encounter TLE for a large array.
+
+    //If elements in array are less than array's length, we can use indices to record past elements. To make it O(n), O(1).
     public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums); //O(nlogn)
         //O(n)

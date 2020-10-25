@@ -1,0 +1,27 @@
+//Left Join是左表的全部记录和右表的关联项， Right Join相反， Inner Join是左右表关联项
+175: SELECT FirstName, LastName, City, State from Person left join Address on Person.PersonId = Address.PersonId;
+
+//LIMIT 1意思是输出一条, OFFSET 1是从第二条开始. 但是我还是没搞清楚其和LIMIT 1,1的区别
+176：
+SELECT
+    IFNULL(
+        (SELECT DISTINCT Salary
+        FROM Employee
+        ORDER BY Salary DESC
+        LIMIT 1 OFFSET 1),NULL) AS SecondHighestSalary;
+
+177:
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  DECLARE M INT;
+  SET M = N - 1;
+  RETURN (
+      # Write your MySQL query statement below.
+      SELECT
+        IFNULL(
+            (SELECT DISTINCT Salary
+            FROM Employee
+            ORDER BY Salary DESC
+            LIMIT 1 OFFSET M),NULL) AS getNthHighestSalary
+  );
+END

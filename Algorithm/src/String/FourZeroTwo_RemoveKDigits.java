@@ -1,4 +1,4 @@
-package StackAndHeap;
+package String;
 
 public class FourZeroTwo_RemoveKDigits {
     //Two special cases: 1."10"/1 2."10"/2. To solve this, judgement need putting at last;

@@ -1,4 +1,6 @@
 
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -7,8 +9,7 @@ import static java.util.Collections.reverseOrder;
 
 public class Main {
     public static void main(String[] args) {
-        int C = 5;
-        System.out.println(~C);
+
         /*
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -104,7 +105,7 @@ public class Main {
         System.out.println(-1);
 
          */
-
+        /*
         char[] list = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t',
                 'u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
                 'O','P','Q','R','S','T','U','V','W','X','Y','Z'};
@@ -135,7 +136,7 @@ public class Main {
         }
         System.out.println(sb.toString());
         //System.out.println("0ZB0tB0geFYHHnjHAPQQc");
-
+    */
 
 
         /*
@@ -197,5 +198,151 @@ public class Main {
 
          */
 
+        /*
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(), M = sc.nextInt(), Q = sc.nextInt();
+        boolean[] isLocked = new boolean[N+2];
+        boolean[] isLean = new boolean[M+1];
+        isLocked[0] = true;
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i=0;i<Q;i++){
+            int op = sc.nextInt();
+            int x, y;
+            switch(op){
+                case 1:
+                    x = sc.nextInt(); y = sc.nextInt();
+                    if(!isLocked[y] && !isLean[x] && !isLocked[map.getOrDefault(x,N+1)]) {
+                        map.put(x, y);
+                        //System.out.println(y);
+                    }
+                    break;
+                case 2:
+                    y = sc.nextInt();
+                    isLocked[y] = true;
+                    break;
+                case 3:
+                    y = sc.nextInt();
+                    isLocked[y] = false;
+                    break;
+                case 4:
+                    x = sc.nextInt();
+                    if(!isLean[x] && !isLocked[map.getOrDefault(x,0)]){
+                        isLean[x] = true;
+
+                        y = map.get(x); //if returned but not place, is N+1;
+                        map.put(x,0);
+                        //System.out.println(y);
+                        System.out.println(y==0?-1:y);
+                    }else{
+                        //System.out.println(map.getOrDefault(x,0));
+                        System.out.println(-1);
+                    }
+                    break;
+                case 5:
+                    x = sc.nextInt();
+                    isLean[x] = false;
+                    break;
+            }
+        }
+         */
+
+        /*
+        Pair<Integer, Integer> e = new Pair(0, sc.nextInt());
+        Pair<Integer, Integer> f = new Pair(1, sc.nextInt());
+        Pair<Integer, Integer> g = new Pair(2, sc.nextInt());
+        PriorityQueue<Pair<Integer,Integer>> queue = new PriorityQueue<>((a,b)->b.value()-a.value());
+        */
+        /*
+        Map<Integer, Integer> price =new TreeMap<Integer,Integer>(new Comparator<Map.Entry<Integer,Integer>>(){
+                         public int compare(Entry<Integer,Integer> e1,Entry<Integer,Integer> e2){
+            				return e2.getValue().compareTo(e1.getValue());
+        }
+                         });
+        price.put(0,sc.nextInt());
+        price.put(1,sc.nextInt());
+        price.put(2,sc.nextInt());
+        */
+/*
+		Collections.sort(price, new Comparator<Map.Entry<Integer,Integer>>(){
+                         public int compare(Entry<Integer,Integer> e1,Entry<Integer,Integer> e2){
+            				return e2.getValue().compareTo(e1.getValue());
+        }
+                         });
+                         */
+
+        /*
+        ArrayList<int[]> queue = new ArrayList<>();
+        queue.add(new int[]{0, sc.nextInt()});
+        queue.add(new int[]{1, sc.nextInt()});
+        queue.add(new int[]{2, sc.nextInt()});
+        queue.sort((a, b) -> b[1] - a[1]);
+
+        int interest = 0;
+        int b = 3;
+        //for(Pair<Integer, Integer> pair:queue)){
+        for(int[] combo:queue){
+            System.out.println(combo[0]+" "+combo[1]);
+            //int p = pair.value();
+            //int a = pair.key();
+            //int p = price.get(a);
+            int amount = Math.min(arr[b], arr[combo[0]]);
+            System.out.println("amount="+amount);
+            interest += combo[1]*amount;
+            //System.out.println();
+            System.out.println("interest="+interest);
+            arr[b] -= amount;
+        }
+
+        System.out.println(interest);
+
+         */
+
+        /*
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        //不能sort. 递归解决不了重复.
+        int[] nums = new int[n];
+        for(int i=0;i<n;i++){
+            nums[i] = sc.nextInt();
+        }
+        int MIN = Integer.MIN_VALUE;
+        //int MIN = -999999;
+        Set<int[]> set = new HashSet<>();
+        helper(nums, 0, MIN, MIN, MIN, set, MIN);
+
+        System.out.println(set.size());
+
+        for(int[] i:set){
+            System.out.println(i[0]+" "+i[1]+" "+i[2]);
+        }
+        */
+
+         int i = -5;
+         System.out.println(i&(1<<1));
+    }
+
+    public static void helper(int[] nums, int idx, int a1, int a2, int a3, Set<int[]> set, int MIN){
+        if(a3!=MIN){
+            set.add(new int[]{a1,a2,a3});
+            return;
+        }
+
+        for(int i=idx;i<nums.length;i++){
+            if(nums[i]<a1) continue;
+            if(a1==MIN){
+                //a1 = nums[i];
+                helper(nums, i+1, nums[i], a2, a3, set, MIN);
+                continue;
+            }
+
+            if(nums[i]<a2) continue;
+            if(a2==MIN){
+                helper(nums, i+1, a1, nums[i], a3, set, MIN);
+                continue;
+            }
+
+            if(nums[i]<a3) continue;
+            helper(nums, i+1, a1, a2, nums[i], set, MIN);
+        }
     }
 }

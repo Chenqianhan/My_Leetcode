@@ -1,4 +1,4 @@
-package Math;
+package Interview;
 
 public class SixtyNine_Sqrt {
     //Newton's Method

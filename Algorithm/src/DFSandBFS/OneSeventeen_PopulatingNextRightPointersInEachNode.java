@@ -5,7 +5,7 @@ import dataStructure.Node;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class OneSeventeen {
+public class OneSeventeen_PopulatingNextRightPointersInEachNode {
     public Node connect(Node root){
         if(root==null)
             return root;
