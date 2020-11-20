@@ -317,32 +317,82 @@ public class Main {
         }
         */
 
+        /*
+         loop1: for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+                if(j==5) continue loop1;
+
+                System.out.println(j);
+            }
+         }
          int i = -5;
          System.out.println(i&(1<<1));
+         */
+        /*
+        String str = "3496";
+        str = new StringBuilder(str).reverse().toString();
+        int sum = 0;
+        for(int i = str.length()-1; i>=0 ; i--){
+            char c = str.charAt(i);
+            if(i%2>0){
+                int tmp = c - '0';
+                tmp *= 2;
+                sum += tmp/10;
+                sum += tmp%10;
+            }else{
+                sum += c - '0';
+            }
+        }
+
+        System.out.println(sum);
+
+        String a = "3413289830", b = "a-bcdefghij";
+        int[] map = new int[a.length()];
+        for(int i=0; i<a.length();i++){
+            map[i] = a.charAt(i)-'0';
+        }
+
+        System.out.println(calculator(b,map));
+
+         */
+        Float f1 = new Float("3.0");
+        int x = f1.intValue();
+        byte b = f1.byteValue();
+        double d = f1.doubleValue();
+        System.out.println(x+b+d);
     }
 
-    public static void helper(int[] nums, int idx, int a1, int a2, int a3, Set<int[]> set, int MIN){
-        if(a3!=MIN){
-            set.add(new int[]{a1,a2,a3});
-            return;
+    public static int calculator(String s, int[] map){
+        int sum = 0, curNum = 0, num = 0;
+        char op = '+';
+        for(char c:s.toCharArray()){
+            if(Character.isLetter(c)){
+                curNum = curNum*10 + map[c-'a'];
+            }else if(c!=' '){
+                num = cal(num, curNum, op);
+                if(c == '+' || c== '-'){
+                    sum+=num;
+                    num = 0;
+                }
+                curNum = 0;
+                op = c;
+            }
         }
 
-        for(int i=idx;i<nums.length;i++){
-            if(nums[i]<a1) continue;
-            if(a1==MIN){
-                //a1 = nums[i];
-                helper(nums, i+1, nums[i], a2, a3, set, MIN);
-                continue;
-            }
+        return sum + cal(num, curNum, op);
+    }
 
-            if(nums[i]<a2) continue;
-            if(a2==MIN){
-                helper(nums, i+1, a1, nums[i], a3, set, MIN);
-                continue;
-            }
-
-            if(nums[i]<a3) continue;
-            helper(nums, i+1, a1, a2, nums[i], set, MIN);
+    public static int cal(int a, int b, char op){
+        switch (op){
+            case '+':
+                return a+b;
+            case '-':
+                return a-b;
+            case '*':
+                return a*b;
+            case '/':
+                return a/b;
         }
+        return 0;
     }
 }
