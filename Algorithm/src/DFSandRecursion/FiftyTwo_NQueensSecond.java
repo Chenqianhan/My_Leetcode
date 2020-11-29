@@ -1,6 +1,7 @@
 package DFSandRecursion;
 
 public class FiftyTwo_NQueensSecond {
+    /*
     public int totalNQueens(int n) {
         int[] cols = new int[n];
         int[] diagonal_1 = new int[n*2-1];
@@ -24,6 +25,39 @@ public class FiftyTwo_NQueensSecond {
             }
         }
         return count;
+    }
+
+    public boolean isAvailable(int n, int row, int col, int[] cols, int[] diagonal_1, int[] diagonal_2){
+        int res = cols[col] + diagonal_1[row+col] + diagonal_2[row-col+n-1];
+        return res==0;
+    }
+     */
+
+    //This way would be more intelligible. Using dfs backtracking.
+    public int totalNQueens(int n) {
+        int[] cols = new int[n];
+        int[] diagonal_1 = new int[n*2-1];
+        int[] diagonal_2 = new int[n*2-1];
+        return helper(n,0,cols,diagonal_1,diagonal_2);
+    }
+
+    public int helper(int n, int row, int[] cols, int[] diagonal_1, int[] diagonal_2){
+        int cnt = 0;
+        for(int i=0;i<n;i++){
+            if(isAvailable(n,row,i,cols,diagonal_1,diagonal_2)){
+                cols[i]=1;
+                diagonal_1[row+i]=1;
+                diagonal_2[row-i+n-1]=1;
+
+                if(row+1==n) cnt++;
+                else cnt += helper(n, row+1, cols, diagonal_1, diagonal_2);
+
+                cols[i]=0;
+                diagonal_1[row+i]=0;
+                diagonal_2[row-i+n-1]=0;
+            }
+        }
+        return cnt;
     }
 
     public boolean isAvailable(int n, int row, int col, int[] cols, int[] diagonal_1, int[] diagonal_2){
