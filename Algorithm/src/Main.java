@@ -15,6 +15,9 @@ public class Main {
         char[] c = new char[]{'1','2','3'};
         System.out.println(Arrays.toString(c));
         System.out.println(String.valueOf(c));
+
+        int[][] i = new int[][]{{1,2},{3,4},{5,6},{7,8}};
+        Arrays.sort(i, (a,b)->b[0]);
     }
 
 }
